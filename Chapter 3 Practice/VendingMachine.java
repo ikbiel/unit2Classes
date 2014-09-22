@@ -16,10 +16,10 @@ public class VendingMachine
     /**
      * Default constructor for objects of class VendingMachine
      */
-    public VendingMachine()
+    public VendingMachine(int canCount)
     {
         // initialise instance variables
-           this.canCount = 0;
+           this.canCount = 10;
            this.tokenCount = 0;
     }
     
