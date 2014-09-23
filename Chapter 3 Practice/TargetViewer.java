@@ -6,11 +6,11 @@ public class TargetViewer
     {
         JFrame frame = new JFrame();
         
-        frame.setSize(300, 400);
-        frame.setTitle("Two Cars");
+        frame.setSize(500, 500);
+        frame.setTitle("Target");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        CarComponent component = new CarComponent();
+        TargetComponent component = new TargetComponent();
         frame.add(component);
         
         frame.setVisible(true);

@@ -1,55 +1,55 @@
 import java.awt.Graphics2D;
-import java.awt.Rectangle;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
+import java.awt.Color;
 
-/** A car shape that can be positioned anywhere on the screen.
+/** Creating the target
  */
 
 public class Target
 {
-    private int xLeft;
-    private int yTop;
+    private int targetXDiam;
+    private int targetYDiam;
+    private int xValue;
+    private int yValue;
     
-    /** Constructs a car with the given top left corner.
-     * @param x  the x coordinate of the top left corner
-     * @param y  the y coordinate of the top left corner
-     */
     
-    public Target(int x, int y)
+    public Target(int xPosition, int yPosition, int diamX, int diamY)
     {
-        xLeft = x;
-        yTop = y;
+       xValue = xPosition;
+       yValue = yPosition; 
+       targetXDiam = diamX;
+       targetYDiam = diamY;
     }
     
-    /** Draws the car
+    /** Draws the target
      */
     
     public void draw(Graphics2D g2)
     {
-        Rectangle body = new Rectangle(xLeft, yTop + 10, 60, 10);
-        Ellipse2D.Double frontTire = new Ellipse2D.Double(xLeft + 10, yTop + 20, 10, 10);
-        Ellipse2D.Double rearTire = new Ellipse2D.Double(xLeft + 40, yTop + 20, 10, 10);
+        Ellipse2D.Double targetBase = new Ellipse2D.Double(100, 100, 300, 300);
+        Ellipse2D.Double base2 = new Ellipse2D.Double
+            (xValue + 20, yValue + 20, targetXDiam - 40, targetYDiam - 40);
+        Ellipse2D.Double base3 = new Ellipse2D.Double
+            (xValue + 20, yValue + 20, targetXDiam - 40, targetYDiam - 40);
+        Ellipse2D.Double base4 = new Ellipse2D.Double
+            (xValue + 20, yValue + 20, targetXDiam - 40, targetYDiam - 40);
+        Ellipse2D.Double base5 = new Ellipse2D.Double
+            (xValue + 20, yValue + 20, targetXDiam - 40, targetYDiam - 40);
         
-        //The bottom of the front windowshield
-        Point2D.Double r1 = new Point2D.Double(xLeft + 10, yTop + 10);
-        //THe front of the roof
-        Point2D.Double r2 = new Point2D.Double(xLeft + 20, yTop);
-        //The rear of the roof
-        Point2D.Double r3 = new Point2D.Double(xLeft + 20, yTop);
-        //The bottom of the rear windshield
-        Point2D.Double r4 = new Point2D.Double(xLeft + 50, yTop + 10);
         
-        Line2D.Double frontWindshield = new Line2D.Double(r1, r2);
-        Line2D.Double roofTop = new Line2D.Double(r2, r3);
-        Line2D.Double rearWindshield = new Line2D.Double(r3, r4);
+        g2.setColor(Color.BLACK);
+        g2.draw(targetBase);
+        g2.setColor(Color.WHITE);
+        g2.draw(base2);
+        g2.setColor(Color.BLACK);
+        g2.draw(base3);
+        g2.setColor(Color.WHITE);
+        g2.draw(base4);
+        g2.setColor(Color.BLACK);
+        g2.draw(base5);
         
-        g2.draw(body);
-        g2.draw(frontTire);
-        g2.draw(rearTire);
-        g2.draw(frontWindshield);
-        g2.draw(roofTop);
-        g2.draw(rearWindshield);
+     
     }
 }

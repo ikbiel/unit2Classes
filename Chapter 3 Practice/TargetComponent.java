@@ -1,24 +1,20 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JComponent;
+import java.awt.geom.Ellipse2D;
 
 /**
- * Draws two car shapes
+ * Creates target base
  */
 public class TargetComponent extends JComponent
 {
-    public void painComponent(Graphics g)
+    public void paintComponent(Graphics g)
     {
         Graphics2D g2 = (Graphics2D) g;
+        Target target1 = new Target(100, 100, 300, 300);
         
-        Target car1 = new Target(0, 0);
+        target1.draw(g2);
         
-        int x = getWidth() - 60;
-        int y = getHeight() - 30;
         
-        Target car2 = new Target(x, y);
-        
-        car1.draw(g2);
-        car2.draw(g2);
     }
 }
