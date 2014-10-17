@@ -52,23 +52,23 @@ public class Stars
        {
            g2.setColor(Color.white);
         }
-       if (chooseColor == "yellow")
+       else if (chooseColor == "yellow")
        {
            g2.setColor(Color.yellow);
         }
-       if (chooseColor == "cyan")
+       else if (chooseColor == "cyan")
        {
            g2.setColor(Color.cyan);
         }
-       if (chooseColor == "pink")
+       else if (chooseColor == "pink")
        {
            g2.setColor(Color.pink);
         }    
-       if (chooseColor == "orange")
+       else if (chooseColor == "orange")
        {
            g2.setColor(Color.orange);
         }
-       if (chooseColor == "green")
+       else 
        {
            g2.setColor(Color.green);
         } 
